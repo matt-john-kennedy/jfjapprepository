@@ -29,7 +29,6 @@ class CastlesController < ApplicationController
     else
       render json: @castle, status: :created
     end
-
   end
 
   def destroy
