@@ -5,5 +5,10 @@ Rails.application.routes.draw do
       post '/sign_up', to: 'users#create'
       post '/sign_in', to: 'users#sign_in'
     end
+      get '/castles', to: 'castles#index'
+      post '/castles', to: 'castles#create'
+      get '/castles/:id', to: 'castles#show'
+      put '/castles/:id', to: 'castles#update'
+      delete '/castles/:id', to: 'castles#destroy'
   end
 end
