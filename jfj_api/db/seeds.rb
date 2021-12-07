@@ -90,3 +90,30 @@ if Enquiry.all.length == 0
         }
     ])
 end
+
+if Booking.all.length == 0
+    bookings = Booking.create([
+        {
+            castle_id: Castle.first.id,
+            customer_id: Customer.first.id,
+            enquiry_id: Enquiry.first.id,
+            start_time: "2021-12-22 08:00:00",
+            duration: 24,
+            end_time: "2021-12-23 08:00:00",
+            paid: true,
+            terms_agreement: true,
+            total: 125
+        },
+        {
+            castle_id: Castle.last.id,
+            customer_id: Customer.last.id,
+            enquiry_id: Enquiry.last.id,
+            start_time: "2022-01-18 12:00:00",
+            duration: 4,
+            end_time: "2022-01-18 16:00:00",
+            paid: true,
+            terms_agreement: true,
+            total: 105
+        }
+    ])
+end

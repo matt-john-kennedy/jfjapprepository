@@ -8,7 +8,6 @@ class EnquiriesController < ApplicationController
     else
       render json: {error: "No enquiries to show"}, status: :not_found
     end
-
   end
 
   def create

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_07_002935) do
+ActiveRecord::Schema.define(version: 2021_12_07_015416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,24 @@ ActiveRecord::Schema.define(version: 2021_12_07_002935) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer "duration"
+    t.boolean "terms_agreement"
+    t.decimal "total"
+    t.boolean "paid"
+    t.bigint "castle_id", null: false
+    t.bigint "customer_id", null: false
+    t.bigint "enquiry_id", null: false
+    t.string "notes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["castle_id"], name: "index_bookings_on_castle_id"
+    t.index ["customer_id"], name: "index_bookings_on_customer_id"
+    t.index ["enquiry_id"], name: "index_bookings_on_enquiry_id"
   end
 
   create_table "castles", force: :cascade do |t|
@@ -90,6 +108,9 @@ ActiveRecord::Schema.define(version: 2021_12_07_002935) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "castles"
+  add_foreign_key "bookings", "customers"
+  add_foreign_key "bookings", "enquiries"
   add_foreign_key "enquiries", "castles"
   add_foreign_key "enquiries", "customers"
 end
