@@ -1,3 +1,3 @@
-# jfjapprepository
+# README
 
-Creating a project for Term 3.
+Project for Term 3
