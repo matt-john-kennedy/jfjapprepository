@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_06_042658) do
+ActiveRecord::Schema.define(version: 2021_12_07_002935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,22 @@ ActiveRecord::Schema.define(version: 2021_12_06_042658) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "enquiries", force: :cascade do |t|
+    t.bigint "castle_id", null: false
+    t.datetime "end_time"
+    t.integer "duration"
+    t.string "notes"
+    t.boolean "terms_agreement"
+    t.decimal "total"
+    t.boolean "paid"
+    t.bigint "customer_id", null: false
+    t.datetime "start_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["castle_id"], name: "index_enquiries_on_castle_id"
+    t.index ["customer_id"], name: "index_enquiries_on_customer_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -74,4 +90,6 @@ ActiveRecord::Schema.define(version: 2021_12_06_042658) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "enquiries", "castles"
+  add_foreign_key "enquiries", "customers"
 end

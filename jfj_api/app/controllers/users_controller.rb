@@ -19,10 +19,6 @@ class UsersController < ApplicationController
         end
     end
 
-    def destroy
-        
-    end
-
     private
     def user_params
         params.permit(:email, :password, :password_confirmation, :role)

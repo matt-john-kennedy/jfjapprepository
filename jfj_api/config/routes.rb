@@ -12,6 +12,12 @@ Rails.application.routes.draw do
     get '/customers/:id', to: 'customers#show'
     put '/customers/:id', to: 'customers#update'
     delete '/customers/:id', to: 'customers#destroy'
+    
+    get 'enquiries', to: 'enquiries#index'
+    post 'enquiries', to: 'enquiries#create'
+    get 'enquiries/:id', to: 'enquiries#show'
+    put 'enquiries/:id', to: 'enquiries#update'
+    delete 'enquiries/:id', to: 'enquiries#destroy'
 
       scope '/auth' do
         post '/sign_up', to: 'users#create'
