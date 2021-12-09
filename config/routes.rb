@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'bookings/index'
-  get 'bookings/create'
-  get 'bookings/show'
-  get 'bookings/update'
-  get 'bookings/destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   scope '/api' do
     get '/castles', to: 'castles#index'
