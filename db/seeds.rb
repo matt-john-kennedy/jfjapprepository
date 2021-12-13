@@ -32,12 +32,14 @@ if Castle.all.length == 0
         {
             name: "Unicorn Magic", 
             description: "Unicorn themed jumping castle perfect for 2-4 year olds. Maximum of 5 occupants in use at once.", 
-            price: 85.00
+            price: 85.00,
+            available: true
         },
         {
             name: "Rainbow Castle", 
             description: "Beautiful bright colours that match any theme. Ideal for 1-3 year olds.", 
-            price: 65.00
+            price: 65.00,
+            available: true
         }
         ])
 end
@@ -47,7 +49,7 @@ if Customer.all.length == 0
         {
             name: "Adriana",
             email: "adriana@live.com.au",
-            phone_number: 61412345678,
+            phone_number: "0412345678",
             street_number: "12",
             street_name: "Privet Drive",
             suburb: "Brisbane",
@@ -57,8 +59,8 @@ if Customer.all.length == 0
         {
             name: "Mila",
             email: "Mila@test.com",
-            phone_number: 61412345678,
-            street_number: "12",
+            phone_number: "0412345678",
+            street_number: "12C",
             street_name: "Privet Drive",
             suburb: "Brisbane",
             postcode: 4000
