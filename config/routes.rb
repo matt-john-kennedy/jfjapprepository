@@ -15,18 +15,18 @@ Rails.application.routes.draw do
     delete '/customers/:id', to: 'customers#destroy'
     
     # routes for all enquiries
-    get 'enquiries', to: 'enquiries#index'
-    post 'enquiries', to: 'enquiries#create'
-    get 'enquiries/:id', to: 'enquiries#show'
-    put 'enquiries/:id', to: 'enquiries#update'
-    delete 'enquiries/:id', to: 'enquiries#destroy'
+    get '/enquiries', to: 'enquiries#index'
+    post '/enquiries', to: 'enquiries#create'
+    get '/enquiries/:id', to: 'enquiries#show'
+    put '/enquiries/:id', to: 'enquiries#update'
+    delete '/enquiries/:id', to: 'enquiries#destroy'
 
     # routes for all bookings
-    get 'bookings', to: 'bookings#index'
-    post 'bookings', to: 'bookings#create'
-    get 'bookings/:id', to: 'bookings#show'
-    put 'bookings/:id', to: 'bookings#update'
-    delete 'bookings/:id', to: 'bookings#destroy'
+    get '/bookings', to: 'bookings#index'
+    post '/bookings', to: 'bookings#create'
+    get '/bookings/:id', to: 'bookings#show'
+    put '/bookings/:id', to: 'bookings#update'
+    delete '/bookings/:id', to: 'bookings#destroy'
 
       scope '/auth' do
         post '/sign_up', to: 'users#create'
