@@ -38,7 +38,7 @@ class CastlesController < ApplicationController
 
   private
   def castle_params
-    params.permit(:name, :description, :price, :image)
+    params.permit(:name, :description, :price, :img_url, :available)
   end
 
   def set_castle
