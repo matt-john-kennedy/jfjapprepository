@@ -3,5 +3,6 @@ class Enquiry < ApplicationRecord
   belongs_to :customer
   has_many :bookings
 
-  validates :terms_agreement, :duration, :end_time, :start_time, :paid, presence: true
+  validates :duration, :end_time, :start_time, presence: true
+  validates_inclusion_of :terms_agreement, in: [true, false]
 end
