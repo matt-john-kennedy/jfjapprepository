@@ -47,6 +47,6 @@ class EnquiriesController < ApplicationController
   end
 
   def enquiry_params
-    params.permit(:booking_start, :booking_end, :duration, :terms_agreement, :total, :castle_id, :customer_id, :paid, :notes)
+    params.permit(:start_time, :end_time, :duration, :terms_agreement, :total, :castle_id, :customer_id, :paid, :notes)
   end
 end
