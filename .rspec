@@ -1,0 +1,8 @@
+--require spec_helper
+require_relative '../choose file'
+
+describe 'what I require' do
+    it 'it should do xyz' do
+        expect(argument([1,2})).to eq(2)
+    end
+end
